@@ -4,7 +4,14 @@ function Dashboard() {
     return(
         <div>
             {/* <Header /> */}
-            <h className='font-mono text-9xl bg-champagnePink'>Sup Shawty</h>
+            <div class="min-w-min">
+            <div class="container bg-champagnePink w-min whitespace-nowrap">
+                <h className='font-mono text-5xl'>Sup Shawty</h>
+                <div class="font-mono text-3x1 py-2 text-center">
+                    Welcome to Your Dashboard
+                </div>
+            </div>
+            </div>
 
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
