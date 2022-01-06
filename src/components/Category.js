@@ -1,45 +1,24 @@
 import React, { useState } from 'react';
 
 function Category({ addCost, name, total }) {
-  const clickHandle = (e) => {
-    e.preventDefault();
-    if (isNaN(parseFloat(document.getElementById('amount').value))) {
-      alert("You didn't enter a number ");
-    } else {
-      addCost(name, parseFloat(document.getElementById('amount').value));
-    }
+  const [amount, setAmount] = useState(0);
+
+  const onChangeHandler = (number) => {
+    setAmount(parseFloat(number));
   };
+
   return (
     <>
-      <form>
-        <input type='number' id='amount' />
-        <button onClick={clickHandle}>Add Amount</button>
-      </form>
+      <div>
+        <input
+          type='number'
+          id={amount}
+          onChange={(e) => onChangeHandler(e.target.value)}
+        />
+        <button onClick={() => addCost(name, amount)}>Add Amount</button>
+      </div>
     </>
   );
 }
 
 export default Category;
-
-// import React, { useState } from 'react';
-
-// function Category({ addCost, name, total }) {
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const newTotal =
-//       total + parseFloat(document.getElementById('amount').value);
-//     addCost(name, newTotal);
-//   };
-//   return (
-//     <>
-//       <form onSubmit={handleSubmit}>
-//         <input type='number' id='amount' />
-//         <button type='submit' value='submit'>
-//           Add Amount
-//         </button>
-//       </form>
-//     </>
-//   );
-// }
-
-// export default Category;

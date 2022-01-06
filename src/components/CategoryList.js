@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Category from './Category';
 import Catergories from '../data/Categories.json';
-import { render } from 'react-dom';
 
 function CategoryList() {
   const [itemList, setItemList] = useState([]);
-  const [showTotals, setShowTotals] = useState(false);
+  const [totalSpent, setTotalSpent] = useState(0);
 
   const addCost = (name, total) => {
     let temp = itemList;
@@ -15,11 +14,21 @@ function CategoryList() {
       }
     });
     setItemList(temp);
+    updateCost();
+  };
+
+  const updateCost = () => {
+    let tempSum = 0;
+    itemList.map((item) => {
+      tempSum += item.Total;
+    });
+    setTotalSpent(tempSum);
   };
 
   useEffect(() => {
-    if (itemList.length === 0) setItemList(Catergories);
-  }, []);
+    setItemList(Catergories);
+    updateCost();
+  });
 
   return (
     <>
@@ -37,25 +46,21 @@ function CategoryList() {
           );
         })}
       </div>
-      {!showTotals ? (
-        <button onClick={() => setShowTotals(!showTotals)}>Show Totals</button>
-      ) : (
-        <div>
-          <button onClick={() => setShowTotals(!showTotals)}>
-            Hide Totals
-          </button>
-          <div>
-            {itemList.map((item) => {
-              return (
-                <div>
-                  <h4>{item.Category}</h4>
-                  <h3>{item.Total}</h3>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
+      <div>
+        <h1>Totals by Category</h1>
+        {itemList.map((item) => {
+          return (
+            <div>
+              <h4>{item.Category}</h4>
+              <h3>${item.Total}</h3>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        <h1>Total amount spent</h1>
+        <h3>${totalSpent}</h3>
+      </div>
     </>
   );
 }
