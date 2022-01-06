@@ -1,7 +1,8 @@
+import './styles/main.css';
 function App() {
   return (
     <div>
-      <h1>Sup Shawty</h1>
+      <h className='font-mono text-9xl bg-red-200'>Sup Shawty</h>
     </div>
   );
 }
