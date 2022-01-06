@@ -18,8 +18,6 @@ function App() {
           <Route path='/' element={<NavLogin/>} />
         </Routes>
       </Router>
-
-
     </div>
   );
 }
