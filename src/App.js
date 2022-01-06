@@ -1,8 +1,9 @@
+import Landingpage from './components/Landingpage';
 import './styles/main.css';
 function App() {
   return (
     <div>
-      <h className='font-mono text-9xl bg-red-200'>Sup Shawty</h>
+      <Landingpage/>
     </div>
   );
 }

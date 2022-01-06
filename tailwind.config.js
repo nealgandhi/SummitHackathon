@@ -16,6 +16,9 @@ module.exports = {
       paleCerulean: "#99C1DE",
       white: "#FFFFFF",
     },
+    backgroundImage: (theme) => ({
+      herobg: "url('/public/images/hero-bg.png')",
+    }),
   },
   plugins: [],
 };
