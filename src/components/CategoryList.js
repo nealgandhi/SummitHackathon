@@ -32,7 +32,7 @@ function CategoryList() {
   });
 
   return (
-    <>
+    <div class="grid grid-cols-2">
       <div>
         <Dropdown itemList={itemList} addCost={addCost} />
       </div>
@@ -49,7 +49,7 @@ function CategoryList() {
       <div>
         <h1>Total amount spent: ${totalSpent}</h1>
       </div>
-    </>
+    </div>
   );
 }
 
