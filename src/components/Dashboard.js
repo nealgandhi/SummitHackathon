@@ -1,16 +1,25 @@
 import React from "react";
+import CategoryList from "./CategoryList";
 
-function Dashboard() {
+export default function Dashboard() {
     return(
         <div>
             {/* <Header /> */}
-            <div class="min-w-min">
-            <div class="container bg-champagnePink w-min whitespace-nowrap">
-                <h className='font-mono text-5xl'>Sup Shawty</h>
-                <div class="font-mono text-3x1 py-2 text-center">
-                    Welcome to Your Dashboard
+            <div class="grid grid-cols-12 gap-8 grid-flow-col auto-cols-max grid-flow-row auto-rows-max ">
+                <div class="col-span-3 rounded-lg p-4 pt-9 pb-9 text-center">
+                    <div class='font-mono text-5xl'>
+                        Sup Shawty
+                    </div>
+                    <div class="font-mono text-3x1 py-2 whitespace-nowrap">
+                        Welcome to Your Dashboard
+                    </div>
                 </div>
-            </div>
+                <div class="row-start-2 col-span-6 row-span-2 bg-aliceBlue p-4 rounded-lg">
+                    <CategoryList />
+                </div>
+                <div class="row-start-2 col-span-2 bg-beauBlue p-4 rounded-lg text-lg font-mono">
+                        Remaining Budget
+                </div>
             </div>
 
             <div class="flex flex-col">
@@ -18,7 +27,7 @@ function Dashboard() {
                     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden">
                         <table class="min-w-min">
-                        <thead class="border-b bg-powderBlue">
+                        <thead class="border-b bg-aliceBlue">
                             <tr>
                             <th scope="col" class="text-sm font-mono text-gray-900 px-6 py-4">
                                 Category
@@ -59,5 +68,3 @@ function Dashboard() {
         </div>
     )
 }
-
-export default Dashboard
