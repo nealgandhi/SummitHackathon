@@ -1,8 +1,9 @@
 import './styles/main.css';
+import Login from './components/Login.js';
 function App() {
   return (
     <div>
-      <h className='font-mono text-9xl bg-red-200'>Sup Shawty</h>
+      <Login />
     </div>
   );
 }
