@@ -1,4 +1,5 @@
 import React from "react";
+import CategoryList from "./CategoryList";
 
 export default function Dashboard() {
     return(
@@ -14,7 +15,7 @@ export default function Dashboard() {
                     </div>
                 </div>
                 <div class="row-start-2 col-span-6 row-span-2 bg-aliceBlue p-4 rounded-lg">
-                    sample
+                    <CategoryList />
                 </div>
                 <div class="row-start-2 col-span-2 bg-beauBlue p-4 rounded-lg text-lg font-mono">
                         Remaining Budget
