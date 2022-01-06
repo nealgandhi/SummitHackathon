@@ -1,8 +1,11 @@
+import React from 'react';
 import './styles/main.css';
+import Dashboard from './components/Dashboard';
+
 function App() {
   return (
     <div>
-      <h className='font-mono text-9xl bg-red-200'>Sup Shawty</h>
+      <Dashboard />
     </div>
   );
 }
