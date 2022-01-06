@@ -20,7 +20,7 @@ export default function Header() {
         <div class="flex items-center space-x-3">
           <a
             href="#"
-            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white m-4"
+            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-beauBlue hover:bg-white m-4"
           >
             Login
           </a>
