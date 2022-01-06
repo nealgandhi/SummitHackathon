@@ -1,8 +1,10 @@
-import './styles/main.css';
+//import './styles/main.css';
+import CategoryList from './components/CategoryList';
+
 function App() {
   return (
     <div>
-      <h className='font-mono text-9xl bg-red-200'>Sup Shawty</h>
+      <CategoryList />
     </div>
   );
 }
