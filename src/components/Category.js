@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Category({ addCost, name, total }) {
+function Category({ addCost, name }) {
   const [amount, setAmount] = useState(0);
 
   const onChangeHandler = (number) => {

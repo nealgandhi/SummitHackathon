@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Category from './Category';
 import Catergories from '../data/Categories.json';
+import Dropdown from './Dropdown';
 
 function CategoryList() {
   const [itemList, setItemList] = useState([]);
@@ -33,18 +34,7 @@ function CategoryList() {
   return (
     <>
       <div>
-        {itemList.map((item) => {
-          return (
-            <div>
-              <h1>{item.Category}</h1>
-              <Category
-                name={item.Category}
-                total={item.Total}
-                addCost={addCost}
-              />
-            </div>
-          );
-        })}
+        <Dropdown itemList={itemList} addCost={addCost} />
       </div>
       <div>
         <h1>Totals by Category</h1>
