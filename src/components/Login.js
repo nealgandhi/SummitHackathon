@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Login({ handleBack, continueFunction, loginData }) {
+function Login() {
   const usernameRef = React.useRef();
   const passwordRef = React.useRef();
 
@@ -13,23 +13,7 @@ function Login({ handleBack, continueFunction, loginData }) {
     );
   });
 
-  const handleSubmit = (e) => {
-    if (
-      loginData.find(
-        (logins) => logins['username'] === usernameRef.current.value
-      ) &&
-      loginData.find((logins) => logins['password'] === '')
-    ) {
-      let admin = loginData.find((logins) => logins['password'] === '');
-      continueFunction(
-        usernameRef.current.value,
-        admin.isPresident,
-        admin.clubName
-      );
-    } else {
-      // Show a modal
-    }
-  };
+  const handleSubmit = (e) => {};
 
   return (
     <>
@@ -43,10 +27,7 @@ function Login({ handleBack, continueFunction, loginData }) {
           type='submit'
           value='Submit'
         />
-        <button
-          class='bg-yellow-500 hover:bg-yellow-600 text-black text-xl font-bold py-1 px-3 rounded border-2 border-black ml-4'
-          onClick={handleBack}
-        >
+        <button class='bg-yellow-500 hover:bg-yellow-600 text-black text-xl font-bold py-1 px-3 rounded border-2 border-black ml-4'>
           Back
         </button>
       </form>
