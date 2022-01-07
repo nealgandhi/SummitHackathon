@@ -32,16 +32,18 @@ function CategoryList() {
   });
 
   return (
-    <div class="grid grid-cols-2">
+    <div class='grid grid-cols-2'>
       <div>
         <Dropdown itemList={itemList} addCost={addCost} />
       </div>
       <div>
-        <h1 class="text-lg">Totals by Category</h1>
+        <h1 class='text-lg'>Totals by Category</h1>
         {itemList.map((item) => {
           return (
             <div>
-              <h4>{item.Category}: ${item.Total}</h4>
+              <h4>
+                {item.Category}: ${item.Total}
+              </h4>
             </div>
           );
         })}
