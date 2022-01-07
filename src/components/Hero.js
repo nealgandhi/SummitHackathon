@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -13,9 +14,11 @@ export default function Hero() {
               Sub-hero message, not too long and not too short. Make it just
               right!
             </p>
-            <button class='mx-auto lg:mx-0 hover:underline bg-paleCerulean text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-              Log In
-            </button>
+            <Link to='/login'>
+              <button class='mx-auto lg:mx-0 hover:underline bg-paleCerulean text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
+                Log In
+              </button>
+            </Link>
           </div>
         </div>
       </div>
