@@ -4,7 +4,6 @@ import CategoryList from './CategoryList';
 export default function Dashboard() {
   return (
     <div>
-      {/* <Header /> */}
       <div class='grid grid-cols-12 gap-8 grid-flow-col auto-cols-max grid-flow-row auto-rows-max '>
         <div class='col-span-3 rounded-lg p-4 pt-9 pb-9 text-center'>
           <div class='font-mono text-5xl'>Sup Shawty</div>
@@ -20,7 +19,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div class='flex flex-col'>
+      {/* <div class='flex flex-col'>
         <div class='overflow-x-auto sm:-mx-6 lg:-mx-8'>
           <div class='py-2 inline-block min-w-full sm:px-6 lg:px-8'>
             <div class='overflow-hidden'>
@@ -74,7 +73,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-      </div>
+  </div> */}
     </div>
   );
 }

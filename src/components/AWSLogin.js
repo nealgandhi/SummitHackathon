@@ -8,8 +8,6 @@ Amplify.configure(awsExports);
 function AWSLogin({ signOut, user }) {
   return (
     <>
-      <h1>Hello User</h1>
-      <button onClick={signOut}>Sign out</button>
     </>
   );
 }
