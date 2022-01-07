@@ -3,7 +3,7 @@ import React from "react";
 export default function InfoCards() {
   return (
     <div>
-      <section class="bg-isabelline border-b py-8">
+      <section class="bg-isabelline py-8">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
           <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center">
             Packed with features for your convenience!
@@ -43,8 +43,8 @@ export default function InfoCards() {
                 <p class="bg-aliceBlue text-gray-800 text-base px-6 pb-5">
                   Every time you enter an expense, a pie chart will update with
                   your expense distribution. And with built-in ring light
-                  integration , you'll be able to check on your spending even
-                  when you're not at your computer!
+                  integration, you'll be able to see how your spending looks
+                  outside of your computer screen too!
                 </p>
               </a>
             </div>
