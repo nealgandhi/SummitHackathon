@@ -41,7 +41,9 @@ function CategoryList() {
         {itemList.map((item) => {
           return (
             <div>
-              <h4>{item.Category}: ${item.Total}</h4>
+              <h4>
+                {item.Category}: ${item.Total}
+              </h4>
             </div>
           );
         })}

@@ -1,3 +1,4 @@
+import Landingpage from './components/Landingpage';
 import React from 'react';
 import './styles/main.css';
 import Dashboard from './components/Dashboard';
@@ -14,12 +15,16 @@ import AWSLogin from './components/AWSLogin.js'
 import NavLogin from './components/NavLogin.js'
 //Amplify.configure(awsconfig)
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CategoryList from './components/CategoryList';
 
 function App() {
   return (
     <>
+      <div>
+        <Landingpage />
+      </div>
       <Header />
-      <div class="h-screen mr-8 ml-8">
+      <div class='h-screen mr-8 ml-8'>
         <Dashboard />
       </div>
       <Footer />
@@ -36,4 +41,4 @@ function App() {
   );
 }
 
-export default (App);
+export default App;
