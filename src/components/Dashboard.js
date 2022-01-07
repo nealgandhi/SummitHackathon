@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CategoryList from './CategoryList';
+import Footer from './Footer';
 
 export default function Dashboard() {
   const [budget, setBudget] = useState(0);
