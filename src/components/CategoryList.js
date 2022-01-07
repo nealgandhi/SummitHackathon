@@ -129,7 +129,7 @@ function CategoryList({ updateBudget }) {
                 label={true}
                 dataKey="percent"
               >
-                {data.map((entry, index) => (
+                {chartList.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
@@ -159,7 +159,7 @@ function CategoryList({ updateBudget }) {
                 label={true}
                 dataKey="percent"
               >
-                {data.map((entry, index) => (
+                {chartList.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
