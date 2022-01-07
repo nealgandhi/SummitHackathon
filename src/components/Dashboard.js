@@ -48,7 +48,7 @@ export default function Dashboard() {
           )}
 
           {!askBudget ? (
-            <div class="h-1">
+            <div class="h1">
               <div class="text-2xl mb-6">Your budget for this month is...</div>
               <div class="text-mono text-center text-8xl">${budget}</div>
             </div>
@@ -56,10 +56,10 @@ export default function Dashboard() {
             <div></div>
           )}
         </div>
-        <div class="text-5xl row-start-3 col-span-3 bg-paleCerulean rounded-lg p-6">
-          <div class="text-2x1 text-center mb-4">You have spent</div>
-          <div class="text-mono text-center text-8x1">${totalSpent}</div>
-          <div class="text-2x1 text-center mb-4">today</div>
+        <div class="h1 row-start-3 col-span-3 bg-paleCerulean rounded-lg pt-6">
+          <div class="text-2xl text-center mb-6">You have spent</div>
+          <div class="text-mono text-center text-8xl">${totalSpent}</div>
+          <div class="text-2xl text-center mt-6">today</div>
         </div>
         <div class="row-start-2 col-span-6 row-span-2 bg-aliceBlue p-4 rounded-lg">
           <CategoryList updateBudget={updateBudget} />
