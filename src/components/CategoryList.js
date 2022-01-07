@@ -33,11 +33,11 @@ function CategoryList() {
 
   return (
     <div class="grid grid-cols-2">
-      <div>
+      <div class="flex flex-col justify-center items-center">
         <Dropdown itemList={itemList} addCost={addCost} />
       </div>
-      <div>
-        <h1 class="text-lg">Totals by Category</h1>
+      <div class="grid-child m-6 bg-isabelline p-4 rounded-lg">
+        <h1 class="text-lg text-center bg-aliceBlue rounded-lg">Totals by Category</h1>
         {itemList.map((item) => {
           return (
             <div>
