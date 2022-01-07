@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Category from "./Category";
 // import Piechart from './Piechart';
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, Legend } from "recharts";
 import Catergories from "../data/Categories.json";
 import Dropdown from "./Dropdown";
 
@@ -32,6 +32,7 @@ function CategoryList({ updateBudget }) {
 
   const updateCost = () => {
     let tempSum = 0;
+    let chartSum = 0;
     itemList.map((item) => {
       tempSum += item.Total;
     });
@@ -40,15 +41,14 @@ function CategoryList({ updateBudget }) {
       chartList.map((chartItem) => {
         if (item.Category === chartItem.category) {
           chartItem.amount = item.Total;
-          const tempNum = item.Total / totalSpent;
+          const tempNum = item.Total / tempSum;
           chartItem.percent = parseFloat(tempNum.toFixed(2));
         }
       });
     });
     console.log(chartList);
   };
-
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884d8"];
+  const COLORS = ["#1973D1", "#135CC5", "#0C3BAA", "#061993", "#010280"];
   useEffect(() => {
     setItemList(Catergories);
     updateCost();
@@ -83,7 +83,7 @@ function CategoryList({ updateBudget }) {
   }, []);
 
   return (
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-3">
       <div class="flex flex-col justify-center items-center">
         <Dropdown itemList={itemList} addCost={addCost} />
       </div>
@@ -108,8 +108,10 @@ function CategoryList({ updateBudget }) {
       </div>
       <div>
         {chartUpdate ? (
-          <div>
+          <div class="text-center">
             <button
+              type="button"
+              class="px-6 py-2.5 bg-paleCerulean text-serif text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               onClick={() => {
                 updateChart();
               }}
@@ -128,7 +130,9 @@ function CategoryList({ updateBudget }) {
                 fill="#8884d8"
                 label={true}
                 dataKey="percent"
+                legendType="rect"
               >
+                <Legend verticalAlign="bottom" height={50} />
                 {chartList.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
@@ -139,8 +143,10 @@ function CategoryList({ updateBudget }) {
             </PieChart>
           </div>
         ) : (
-          <div>
+          <div class="text-center">
             <button
+              type="button"
+              class="px-6 py-2.5 bg-paleCerulean text-serif text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               onClick={() => {
                 updateChart();
               }}
@@ -150,7 +156,7 @@ function CategoryList({ updateBudget }) {
             <PieChart width={400} height={400}>
               <Pie
                 data={chartList}
-                cx={200}
+                cx={220}
                 cy={200}
                 labelLine={false}
                 outerRadius={80}
@@ -158,7 +164,9 @@ function CategoryList({ updateBudget }) {
                 fill="#8884d8"
                 label={true}
                 dataKey="percent"
+                legendType="rect"
               >
+                <Legend verticalAlign="bottom" height={50} />
                 {chartList.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
