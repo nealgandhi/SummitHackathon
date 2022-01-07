@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function DashboardHeader({ signOut }) {
   return (
     <div>
       <nav class='flex px-8 bg-paleCerulean text-white justify-between'>
@@ -21,12 +22,15 @@ export default function Header() {
         </div>
 
         <div class='flex items-center space-x-3'>
-          <a
-            href='/login'
-            class='inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-beauBlue hover:bg-white m-4'
-          >
-            Login
-          </a>
+          <Link to='/'>
+            <button
+              onClick={signOut}
+              href='/'
+              class='inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-beauBlue hover:bg-white m-4'
+            >
+              Sign out
+            </button>
+          </Link>
         </div>
       </nav>
     </div>

@@ -6,7 +6,7 @@ import InfoCards from "./InfoCards";
 
 export default function Landingpage() {
   return (
-    <div>
+    <div class="hscreen">
       <Header />
       <Hero />
       <InfoCards />

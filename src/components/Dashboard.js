@@ -1,78 +1,67 @@
-import React from "react";
-import CategoryList from "./CategoryList";
+import React, { useState, useEffect } from 'react';
+import CategoryList from './CategoryList';
 
 export default function Dashboard() {
+  const [budget, setBudget] = useState(0);
+  const [askBudget, setAskBudget] = useState(true);
+
+  const handleClick = (number) => {
+    setBudget(parseFloat(number));
+  };
+
+  const updateBudget = (amount) => {
+    setBudget(budget - amount);
+  };
+
   return (
-    <div>
-      {/* <Header /> */}
-      <div class="grid grid-cols-12 gap-8 grid-flow-col auto-cols-max grid-flow-row auto-rows-max">
-        <div class="col-span-3 rounded-lg p-4 pt-9 pb-9 text-center">
-          <div class="font-mono text-5xl">Sup Shawty</div>
-          <div class="font-mono text-3x1 py-2 whitespace-nowrap">
-            Welcome to Your Dashboard
-          </div>
+    <div class='ml-8 mr-8 min-height h-screen'>
+      <div class='grid grid-cols-12 gap-8 grid-flow-col auto-cols-max grid-flow-row auto-rows-max'>
+        <div class='col-span-3 rounded-lg p-4 pt-9 pb-9 text-center'>
+          <div class='text-6xl mb-4'>Sup Shawty</div>
+          <div class='text-lg whitespace-nowrap'>Welcome to Your Dashboard</div>
         </div>
-        <div class="row-start-2 col-span-6 row-span-2 bg-aliceBlue p-4 rounded-lg">
-          <CategoryList />
-        </div>
-        <div class="row-start-2 col-span-2 bg-beauBlue p-4 rounded-lg text-lg font-mono">
-          Remaining Budget
-        </div>
-      </div>
-
-      <div class="flex flex-col">
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-            <div class="overflow-hidden">
-              <table class="min-w-min">
-                <thead class="border-b bg-aliceBlue">
-                  <tr>
-                    <th
-                      scope="col"
-                      class="text-sm font-mono text-gray-900 px-6 py-4"
-                    >
-                      Category
-                    </th>
-                    <th
-                      scope="col"
-                      class="text-sm font-mono text-gray-900 px-6 py-4"
-                    >
-                      Expense
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr class="bg-mintCream border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 text-center">
-                      1
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                      Mark
-                    </td>
-                  </tr>
-
-                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 text-center">
-                      2
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                      Jacob
-                    </td>
-                  </tr>
-
-                  <tr class="bg-mintCream border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 text-center">
-                      3
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                      Larry
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class='row-start-2 col-span-3 bg-beauBlue p-6 rounded-lg text-lg'>
+          {askBudget ? (
+            <div>
+              <div class='text-3xl'>What's your budget?</div>
+              <div class='space-x-2 space-y-4'>
+                <input
+                  type='number'
+                  id={budget}
+                  onChange={(e) => handleClick(e.target.value)}
+                />
+                <button
+                  type='button'
+                  class='inline-block px-6 py-2.5 bg-paleCerulean text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
+                  onClick={() => {
+                    setAskBudget(false);
+                  }}
+                >
+                  Set
+                </button>
+              </div>
             </div>
-          </div>
+          ) : (
+            <></>
+          )}
+
+          {!askBudget ? (
+            <div class='h-1'>
+              <div class='text-2xl mb-6'>Your budget for this month is...</div>
+              <div class='text-mono text-center text-8xl'>${budget}</div>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
+        <div class='text-5xl row-start-3 col-span-3 bg-paleCerulean rounded-lg p-6'>
+          shawty1
+        </div>
+        <div class='row-start-2 col-span-6 row-span-2 bg-aliceBlue p-4 rounded-lg'>
+          <CategoryList updateBudget={updateBudget} />
+        </div>
+        <div class='row-start-2 col-span-3 row-span-2 bg-beauBlue p-6 rounded-lg'>
+          pie chart
         </div>
       </div>
     </div>

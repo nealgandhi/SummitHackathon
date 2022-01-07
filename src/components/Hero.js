@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -12,9 +13,11 @@ export default function Hero() {
             <p class="leading-normal text-2xl mb-8">
               Get started with your budget tracking today!
             </p>
-            <button class="mx-auto lg:mx-0 hover:underline bg-paleCerulean text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-              Sign up/Log in
-            </button>
+            <Link to='/login'>
+              <button class='mx-auto lg:mx-0 hover:underline bg-paleCerulean text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
+                Sign up/Log In
+              </button>
+            </Link>
           </div>
         </div>
       </div>
