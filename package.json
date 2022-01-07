@@ -7,13 +7,16 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "postcss": "^8.4.5",
     "aws-amplify": "^4.3.11",
     "crypto-browserify": "^3.12.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "postcss": "^8.4.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "serialport": "^9.2.8",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
@@ -42,5 +45,17 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.0.11"
-  }
+  },
+  "description": "Budget Expense Management Application Created by: Neal Gandhi, Megan Vu, Salman Jaher, Salman Hossain, Jane Luo, Muhideen Mustapha",
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nealgandhi/SummitHackathon.git"
+  },
+  "author": "DNE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nealgandhi/SummitHackathon/issues"
+  },
+  "homepage": "https://github.com/nealgandhi/SummitHackathon#readme"
 }
