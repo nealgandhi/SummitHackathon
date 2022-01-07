@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Category from "./Category";
-// import Piechart from './Piechart';
 import { PieChart, Pie, Cell, Legend } from "recharts";
 import Catergories from "../data/Categories.json";
+import Chart from "../data/Chart.json";
 import Dropdown from "./Dropdown";
+import { stringify } from "querystring";
 
 function CategoryList({ updateBudget }) {
   const [itemList, setItemList] = useState([]);
   const [totalSpent, setTotalSpent] = useState(0);
   const [chartList, setChartList] = useState([5]);
   const [chartUpdate, setChartUpdate] = useState(true);
+
+  const chart = require("../data/Chart.json");
 
   const updateChart = () => {
     setTimeout(() => {
@@ -43,43 +46,24 @@ function CategoryList({ updateBudget }) {
           chartItem.amount = item.Total;
           const tempNum = item.Total / tempSum;
           chartItem.percent = parseFloat(tempNum.toFixed(2));
+          for (var i = 0; i < Chart.pies.length; i++) {
+            if (Chart.pies[i].category === chartItem.category) {
+              let jsonSum = chartItem.amount;
+              Chart.pies[i].amount = jsonSum;
+              console.log(Chart.pies[i].amount);
+            }
+          }
         }
       });
     });
-    console.log(chartList);
   };
+
   const COLORS = ["#1973D1", "#135CC5", "#0C3BAA", "#061993", "#010280"];
   useEffect(() => {
     setItemList(Catergories);
     updateCost();
-    let tempchartList = [
-      {
-        category: "Others",
-        "amount:": 0.0,
-        percent: 0.0,
-      },
-      {
-        category: "Shopping & Entertainment",
-        "amount:": 0.0,
-        percent: 0.0,
-      },
-      {
-        category: "Health",
-        "amount:": 0.0,
-        percent: 0.0,
-      },
-      {
-        category: "Personal & Family Care",
-        "amount:": 0.0,
-        percent: 0.0,
-      },
-      {
-        category: "Restaurants & Dining",
-        "amount:": 0.0,
-        percent: 0.0,
-      },
-    ];
-    setChartList(tempchartList);
+    setChartList(Chart.pies);
+    console.log({ chartList });
   }, []);
 
   return (

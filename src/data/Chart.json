@@ -1,0 +1,29 @@
+{
+  "pies": [
+    {
+      "category": "Others",
+      "amount": 0.0,
+      "percent": 0.0
+    },
+    {
+      "category": "Shopping & Entertainment",
+      "amount": 0.0,
+      "percent": 0.0
+    },
+    {
+      "category": "Health",
+      "amount": 0.0,
+      "percent": 0.0
+    },
+    {
+      "category": "Personal & Family Care",
+      "amount": 0.0,
+      "percent": 0.0
+    },
+    {
+      "category": "Restaurants & Dining",
+      "amount": 0.0,
+      "percent": 0.0
+    }
+  ]
+}

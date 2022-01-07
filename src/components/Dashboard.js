@@ -62,10 +62,9 @@ export default function Dashboard() {
           <div class="text-mono text-center text-8xl">${totalSpent}</div>
           <div class="text-2xl text-center mt-6">today</div>
         </div>
-        <div class="row-start-2 col-span-6 row-span-2 bg-aliceBlue p-4 rounded-lg">
+        <div class="row-start-2 col-span-9 row-span-2 bg-aliceBlue p-4 rounded-lg">
           <CategoryList updateBudget={updateBudget} />
         </div>
-      </div>
       </div>
     </div>
   );
