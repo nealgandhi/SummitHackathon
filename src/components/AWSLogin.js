@@ -16,7 +16,6 @@ function AWSLogin({ signOut, user }) {
     <>
       <DashboardHeader signOut={handleSignout} />
       <Dashboard />
-      <Footer />
     </>
   );
 }
