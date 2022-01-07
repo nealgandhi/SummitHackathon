@@ -9,7 +9,7 @@ function Category({ addCost, name }) {
 
   return (
     <>
-      <div>
+      <div class="space-x-2">
         <input
           type='number'
           id={amount}

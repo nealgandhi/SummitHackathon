@@ -37,10 +37,10 @@ function CategoryList() {
         <Dropdown itemList={itemList} addCost={addCost} />
       </div>
       <div class="grid-child m-6 bg-isabelline p-4 rounded-lg">
-        <h1 class="text-lg text-center bg-beauBlue rounded-lg">Totals by Category</h1>
+        <h1 class="text-2xl p-2 mb-2 text-center bg-beauBlue rounded-lg">Totals by Category</h1>
         {itemList.map((item) => {
           return (
-            <div>
+            <div class="text-lg">
               <h4>
                 {item.Category}: ${item.Total}
               </h4>
@@ -48,7 +48,7 @@ function CategoryList() {
           );
         })}
         <div>
-          <h1 class="text-m text-center bg-aliceBlue rounded-lg">Total Amount Spent: ${totalSpent}</h1>
+          <h1 class="text-xl p-2 mt-2 text-center bg-aliceBlue rounded-lg">Total Amount Spent: ${totalSpent}</h1>
         </div>
       </div>
     </div>
