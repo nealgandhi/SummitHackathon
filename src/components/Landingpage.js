@@ -5,7 +5,7 @@ import Hero from './Hero';
 
 export default function Landingpage() {
   return (
-    <div>
+    <div class="hscreen">
       <Header />
       <Hero />
       <Footer />
