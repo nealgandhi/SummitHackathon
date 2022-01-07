@@ -14,6 +14,7 @@ export default function Header() {
           >
             <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
           </svg>
+          <span class="font-semibold text-xl tracking-tight">Name</span>
           <span class="font-semibold text-xl tracking-tight">United Shawties of America</span>
         </div>
 
@@ -27,5 +28,5 @@ export default function Header() {
         </div>
       </nav>
     </div>
-  )
+  );
 }
