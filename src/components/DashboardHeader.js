@@ -11,12 +11,12 @@ export default function DashboardHeader({ signOut }) {
           <span class='font-semibold text-xl tracking-tight'>BET</span>
         </div>
 
-        <div class='flex items-center space-x-3'>
-          <Link to='/'>
+        <div class="flex items-center space-x-3">
+          <Link to="/">
             <button
               onClick={signOut}
-              href='/'
-              class='inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-beauBlue hover:bg-white m-4'
+              href="/"
+              class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-beauBlue hover:bg-white m-4"
             >
               Sign out
             </button>

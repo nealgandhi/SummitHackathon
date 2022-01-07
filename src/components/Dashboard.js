@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import CategoryList from "./CategoryList";
-import Footer from './Footer';
+import Footer from "./Footer";
 
 export default function Dashboard() {
   const [budget, setBudget] = useState(0);
@@ -18,12 +17,11 @@ export default function Dashboard() {
   };
 
   return (
-    <div class='bg-isabelline h-screen'>
-      <div class='ml-8 mr-8 mb-40'>
-      <div class='grid grid-cols-12 gap-8 grid-flow-col auto-cols-max grid-flow-row auto-rows-max'>
-        <div class='col-span-3 rounded-lg p-4 pt-9 pb-9 text-center'>
-          <div class='text-6xl mb-4'>Sup Shawty</div>
-          <div class='text-lg whitespace-nowrap'>Welcome to Your Dashboard</div>
+    <div class="ml-8 mr-8 min-height h-screen">
+      <div class="grid grid-cols-12 gap-8 grid-flow-col auto-cols-max grid-flow-row auto-rows-max">
+        <div class="col-span-3 rounded-lg p-4 pt-9 pb-9 text-center">
+          <div class="text-6xl mb-4">Hello User</div>
+          <div class="text-lg whitespace-nowrap">Welcome to Your Dashboard</div>
         </div>
         <div class="row-start-2 col-span-3 bg-beauBlue p-6 rounded-lg text-lg">
           {askBudget ? (
@@ -51,7 +49,7 @@ export default function Dashboard() {
           )}
 
           {!askBudget ? (
-            <div class="h1">
+            <div class="h-1">
               <div class="text-2xl mb-6">Your budget for this month is...</div>
               <div class="text-mono text-center text-8xl">${budget}</div>
             </div>
@@ -66,9 +64,6 @@ export default function Dashboard() {
         </div>
         <div class="row-start-2 col-span-6 row-span-2 bg-aliceBlue p-4 rounded-lg">
           <CategoryList updateBudget={updateBudget} />
-        </div>
-        <div class="row-start-2 col-span-3 row-span-2 bg-beauBlue p-6 rounded-lg">
-          pie chart
         </div>
       </div>
       </div>
