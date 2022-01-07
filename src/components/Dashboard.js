@@ -14,7 +14,8 @@ export default function Dashboard() {
   };
 
   return (
-    <div class='ml-8 mr-8 min-height h-screen'>
+    <div class='bg-isabelline h-screen'>
+      <div class='ml-8 mr-8 mb-40'>
       <div class='grid grid-cols-12 gap-8 grid-flow-col auto-cols-max grid-flow-row auto-rows-max'>
         <div class='col-span-3 rounded-lg p-4 pt-9 pb-9 text-center'>
           <div class='text-6xl mb-4'>Sup Shawty</div>
@@ -63,6 +64,7 @@ export default function Dashboard() {
         <div class='row-start-2 col-span-3 row-span-2 bg-beauBlue p-6 rounded-lg'>
           pie chart
         </div>
+      </div>
       </div>
     </div>
   );
