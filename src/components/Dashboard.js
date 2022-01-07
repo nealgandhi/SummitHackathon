@@ -5,6 +5,7 @@ import Footer from "./Footer";
 export default function Dashboard() {
   const [budget, setBudget] = useState(0);
   const [askBudget, setAskBudget] = useState(true);
+  const [totalSpent, setTotalSpent] = useState(0);
 
   const handleClick = (number) => {
     setBudget(parseFloat(number));
@@ -12,6 +13,7 @@ export default function Dashboard() {
 
   const updateBudget = (amount) => {
     setBudget(budget - amount);
+    setTotalSpent(totalSpent + amount);
   };
 
   return (
@@ -55,12 +57,15 @@ export default function Dashboard() {
             <div></div>
           )}
         </div>
-        <div class="text-5xl row-start-3 col-span-3 bg-paleCerulean rounded-lg p-6">
-          shawty1
+        <div class="h1 row-start-3 col-span-3 bg-paleCerulean rounded-lg pt-6">
+          <div class="text-2xl text-center mb-6">You have spent</div>
+          <div class="text-mono text-center text-8xl">${totalSpent}</div>
+          <div class="text-2xl text-center mt-6">today</div>
         </div>
-        <div class="row-start-2 col-span-9 row-span-2 bg-aliceBlue p-4 rounded-lg">
+        <div class="row-start-2 col-span-6 row-span-2 bg-aliceBlue p-4 rounded-lg">
           <CategoryList updateBudget={updateBudget} />
         </div>
+      </div>
       </div>
     </div>
   );
